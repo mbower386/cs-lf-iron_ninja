@@ -1,12 +1,17 @@
-abstract class Ninja
+using System;
+
+namespace IronNinja.NinjaClass
 {
-    protected int calorieIntake;
-    public List<IConsumable> ConsumptionHistory;
-    public Ninja ()
+    abstract class Ninja
     {
-        calorieIntake = 0;
-        ConsumptionHistory = new List<IConsumable> ();
+        protected int calorieIntake;
+        public List<IConsumable> ConsumptionHistory;
+        public Ninja ()
+        {
+            calorieIntake = 0;
+            ConsumptionHistory = new List<IConsumable> ();
+        }
+        public abstract bool IsFull { get; }
+        public abstract void Consume (IConsumable item);
     }
-    public abstract bool IsFull { get; }
-    public abstract void Consume (IConsumable item);
 }
