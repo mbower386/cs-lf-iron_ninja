@@ -1,6 +1,6 @@
 using System;
 
-namespace IronNinja.IConsumable
+namespace IronNinja.IConsumableClass
 {
     interface IConsumable
     {

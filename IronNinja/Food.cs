@@ -1,4 +1,5 @@
 using System;
+using IronNinja.IConsumableClass;
 
 namespace IronNinja.FoodClass
 {

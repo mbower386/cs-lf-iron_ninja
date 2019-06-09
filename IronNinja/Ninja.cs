@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using IronNinja.IConsumableClass;
 
 namespace IronNinja.NinjaClass
 {
@@ -11,7 +13,7 @@ namespace IronNinja.NinjaClass
             calorieIntake = 0;
             ConsumptionHistory = new List<IConsumable> ();
         }
-        public abstract bool IsFull { get; }
+        public abstract bool IsFull { get; set; }
         public abstract void Consume (IConsumable item);
     }
 }

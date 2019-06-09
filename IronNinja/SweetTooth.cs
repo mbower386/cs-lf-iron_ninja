@@ -1,11 +1,19 @@
 using System;
+using System.Collections.Generic;
+using IronNinja.IConsumableClass;
 using IronNinja.NinjaClass;
 
 namespace IronNinja.SweetToothClass
 {
     class SweetTooth : Ninja
     {
-        public override bool IsFull ()
+        public override bool IsFull
+        {
+            get { return IsFull; }
+            set { IsFull = value; }
+        }
+
+        public override void Consume (IConsumable item)
         {
             if (calorieIntake > 1500)
             {
@@ -16,22 +24,17 @@ namespace IronNinja.SweetToothClass
                 IsFull = false;
             }
 
-            return IsFull;
-        }
-
-        public override void Consume (IronNinja.IConsumable item)
-        {
             if (!IsFull)
             {
-                calorieIntake += item.calories;
+                calorieIntake += item.Calories;
 
-                if (IsSweet)
+                if (item.IsSweet)
                 {
                     calorieIntake += 10;
                 }
 
-                ConsumptionHistory.add (item);
-                GetInfo ();
+                ConsumptionHistory.Add (item);
+                item.GetInfo ();
             }
             if (IsFull)
             {
