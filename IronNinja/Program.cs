@@ -13,12 +13,9 @@ namespace IronNinja
     {
         static void Main (string[] args)
         {
-            Console.WriteLine ("Hello World!");
             Buffet buffet = new Buffet ();
             SweetTooth st = new SweetTooth ();
-            st.IsFull = false;
             SpiceHound sh = new SpiceHound ();
-            sh.IsFull = false;
 
             while (st.IsFull == false)
             {

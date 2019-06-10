@@ -13,7 +13,7 @@ namespace IronNinja.NinjaClass
             calorieIntake = 0;
             ConsumptionHistory = new List<IConsumable> ();
         }
-        public abstract bool IsFull { get; set; }
+        public abstract bool IsFull { get; }
         public abstract void Consume (IConsumable item);
     }
 }

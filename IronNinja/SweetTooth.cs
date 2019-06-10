@@ -9,21 +9,11 @@ namespace IronNinja.SweetToothClass
     {
         public override bool IsFull
         {
-            get { return IsFull; }
-            set { IsFull = value; }
+            get { return calorieIntake > 1500; }
         }
 
         public override void Consume (IConsumable item)
         {
-            if (calorieIntake > 1500)
-            {
-                IsFull = true;
-            }
-            else
-            {
-                IsFull = false;
-            }
-
             if (!IsFull)
             {
                 calorieIntake += item.Calories;
